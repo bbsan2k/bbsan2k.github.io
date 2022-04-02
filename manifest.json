@@ -5,9 +5,9 @@
     "builds": [{
         "chipFamily": "ESP32",
         "parts": [
-            { "path": "build/bootloader/bootloader.bin", "offset": 0 },
-            { "path": "build/gbaHD.bin", "offset": 65536 },
-            { "path": "build/spiffs.bin", "offset": 2686976 }
+            { "path": "https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-esp32-bootloader.bin", "offset": 0 },
+            { "path": "https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-esp32.bin", "offset": 65536 },
+            { "path": "https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-spiffs.bin", "offset": 2686976 }
         ]
     }]
 }
