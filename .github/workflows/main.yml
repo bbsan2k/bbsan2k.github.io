@@ -30,6 +30,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Update
         run: |
+          rm *.bin
           wget https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-esp32-bootloader.bin
           wget https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-esp32.bin
           wget https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-spiffs.bin
