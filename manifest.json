@@ -5,11 +5,11 @@
     "builds": [{
         "chipFamily": "ESP32",
         "parts": [
-            { "path": "bootloader.bin", "offset": 4096 },
-            { "path": "partition-table.bin", "offset": 32768 },
-            { "path": "ota_data_initial.bin", "offset": 57344 },
-            { "path": "gbaHD.bin", "offset": 65536 },
-            { "path": "spiffs.bin", "offset": 2686976 }
+            { "path": "gbaHD-esp32-bootloader.bin", "offset": 4096 },
+            { "path": "gbaHD-partition-table.bin", "offset": 32768 },
+            { "path": "gbaHD-ota_data_initial.bin", "offset": 57344 },
+            { "path": "gbaHD-esp32.bin", "offset": 65536 },
+            { "path": "gbaHD-spiffs.bin", "offset": 2686976 }
         ]
     }]
 }
