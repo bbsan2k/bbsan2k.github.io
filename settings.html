@@ -31,13 +31,14 @@
                 var ssid = document.getElementById("wifi.ssid").value;
                 var password = document.getElementById("wifi.password").value;
 
-                alert(ssid);
-
                 await writer.write("wifi.ssid=" + ssid + "\n");
                 delay(1500);
+
                 await writer.write("wifi.password=" + password + "\n");
                 delay(1500);
                 await writer.write("reboot");
+
+                alert("Done!");
 
 
                 // Allow the serial port to be closed later.
