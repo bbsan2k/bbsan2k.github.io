@@ -37,12 +37,14 @@
                 await delay(1000);
                 await writer.write("reboot");
 
-                alert("Done, your gbaHD is rebooting now!");
 
                 // Allow the serial port to be closed later.
-                writer.releaseLock();
                 writer.close();
-                port.close();
+                await writableStreamClosed;
+
+                await port.close();
+
+                alert("Done, your gbaHD is rebooting now!");
             } else {
                 alert("Your browser is not supported. Please use a Chromium based browser.");
             }
