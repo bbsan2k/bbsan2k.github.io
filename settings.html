@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="gbaHD.css">
     <meta name="viewport" content="width=device-width,initial-scale=0.8">
     <script type="text/javascript">
-        function delay(delayInms) {
+        async function delay(delayInms) {
             return new Promise(resolve => {
                 setTimeout(() => {
                     resolve(2);
@@ -32,9 +32,9 @@
                 var password = document.getElementById("wifi.password").value;
 
                 await writer.write("wifi.ssid=" + ssid + "\n");
-                delay(1500);
+                await delay(1500);
                 await writer.write("wifi.password=" + password + "\n");
-                delay(1500);
+                await delay(1500);
                 await writer.write("reboot");
 
                 alert("Done, your gbaHD is rebooting now!");
