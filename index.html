@@ -22,19 +22,20 @@
         </nav>
         <h1>gbaHD Update</h1>
         <article>
-            <h2>Release Version:</h2>
-            <div>
-                <esp-web-install-button manifest="release_manifest.json">
-                    <button slot="activate">Install Release Build</button>
-                </esp-web-install-button>
-            </div>
-
-            <h2>Test Version:</h2>
-            <div>
-                <esp-web-install-button manifest="test_manifest.json">
-                    <button slot="activate">Install Test Build</button>
-                </esp-web-install-button>
-            </div>
+            <h3>Release Version:</h3>
+            <b>Version:</b>
+            <p id="rls_version">1.1</p>
+            <b>Changelog:</b>
+            <p id="rls_changelog"></p>
+            <esp-web-install-button manifest="release_manifest.json">
+                <button slot="activate">Install Release Build</button>
+            </esp-web-install-button>
         </article>
+        <!--article>
+            <h3>Test Version:</h3>
+            <esp-web-install-button manifest="test_manifest.json">
+                <button slot="activate">Install Test Build</button>
+            </esp-web-install-button>
+        </article-->
     </main>
 </body>
