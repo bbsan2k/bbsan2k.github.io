@@ -32,15 +32,17 @@
                 var password = document.getElementById("wifi.password").value;
 
                 await writer.write("wifi.ssid=" + ssid + "\n");
-                await delay(1500);
+                await delay(1000);
                 await writer.write("wifi.password=" + password + "\n");
-                await delay(1500);
+                await delay(1000);
                 await writer.write("reboot");
 
                 alert("Done, your gbaHD is rebooting now!");
 
                 // Allow the serial port to be closed later.
                 writer.releaseLock();
+                writer.close();
+                port.close();
             } else {
                 alert("Your browser is not supported. Please use a Chromium based browser.");
             }
