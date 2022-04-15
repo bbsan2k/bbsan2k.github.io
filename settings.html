@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="gbaHD.css">
     <meta name="viewport" content="width=device-width,initial-scale=0.8">
     <script type="text/javascript">
+        function delay(delayInms) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve(2);
+                }, delayInms);
+            });
+        }
         async function writeWifi() {
             if ("serial" in navigator) {
                 // Prompt user to select any serial port.
@@ -21,11 +28,17 @@
 
                 const writer = textEncoder.writable.getWriter();
 
-                var ssid = document.getElementById("wifi.ssid");
-                var password = document.getElementById("wifi.password");
+                var ssid = document.getElementById("wifi.ssid").nodeValue;
+                var password = document.getElementById("wifi.password").nodeValue;
+
+                alert(ssid);
 
                 await writer.write("wifi.ssid=" + ssid);
+                delay(1000);
                 await writer.write("wifi.password=" + password);
+                delay(1000);
+                await writer.write("reboot");
+
 
                 // Allow the serial port to be closed later.
                 writer.releaseLock();
