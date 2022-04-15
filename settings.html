@@ -33,10 +33,10 @@
 
                 alert(ssid);
 
-                await writer.write("wifi.ssid=" + ssid);
-                delay(1000);
-                await writer.write("wifi.password=" + password);
-                delay(1000);
+                await writer.write("wifi.ssid=" + ssid + "\n");
+                delay(1500);
+                await writer.write("wifi.password=" + password + "\n");
+                delay(1500);
                 await writer.write("reboot");
 
 
