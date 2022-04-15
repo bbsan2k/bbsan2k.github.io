@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="pico.min.css">
     <link rel="stylesheet" href="gbaHD.css">
     <meta name="viewport" content="width=device-width,initial-scale=0.8">
-    <script>
+    <script type="text/javascript">
         function writeWifi() {
             if ("serial" in navigator) {
                 // Prompt user to select any serial port.
@@ -37,7 +37,6 @@
     </script>
 </head>
 
-
 <body>
     <main class="container">
         <nav>
@@ -58,7 +57,7 @@
 
                 <label for="wifi.password">Password:</label><br>
                 <input type="password" id="wifi.password">
-                <input type="button" value="Save and Restart" onclick="writeWifi()">
+                <input type="button" value="Save and Restart" onclick="writeWifi();">
             </form>
         </article>
     </main>
