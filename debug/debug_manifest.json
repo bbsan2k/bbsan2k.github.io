@@ -5,11 +5,11 @@
     "builds": [{
         "chipFamily": "ESP32",
         "parts": [
-            { "path": "debug-gbaHD-esp32-bootloader.bin", "offset": 4096 },
-            { "path": "debug-gbaHD-partition-table.bin", "offset": 32768 },
+            { "path": "https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-esp32-bootloader.bin", "offset": 4096 },
+            { "path": "https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-partition-table.bin", "offset": 32768 },
             { "path": "debug-gbaHD-ota_data_initial.bin", "offset": 57344 },
-            { "path": "debug-gbaHD-esp32.bin", "offset": 65536 },
-            { "path": "debug-gbaHD-spiffs.bin", "offset": 2686976 }
+            { "path": "https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-esp32.bin", "offset": 65536 },
+            { "path": "https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-spiffs.bin", "offset": 2686976 }
         ]
     }]
 }
