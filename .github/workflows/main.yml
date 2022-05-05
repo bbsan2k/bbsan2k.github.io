@@ -30,6 +30,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Update
         run: |
+          mkdir -p .github/tmp
           rm gbaHD-esp32-bootloader.bin
           rm gbaHD-esp32.bin
           rm gbaHD-spiffs.bin
@@ -57,7 +58,7 @@ jobs:
         # Runs a set of commands using the runners shell
       - name: Cleanup
         run: |
-          rm .github/tmp/latest.json
+          rm -rf .github/tmp
       
           
       - name: Add & Commit
