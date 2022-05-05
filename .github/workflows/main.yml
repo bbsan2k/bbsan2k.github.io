@@ -50,7 +50,7 @@ jobs:
           # 
           output_file: index.html
           # See "data_format" for supported formats
-          data_file: ${{ runner.temp }}/latest.jsonlatest.json
+          data_file: ${{ runner.temp }}/latest.json
           # To be used with the "data_file" input, can be one of: env, ini, yaml or json
           data_format: json
           
