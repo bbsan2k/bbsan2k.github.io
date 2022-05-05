@@ -1,0 +1,15 @@
+{
+    "name": "gbaHD",
+    "version": "{{name}}",
+    "new_install_prompt_erase": true,
+    "builds": [{
+        "chipFamily": "ESP32",
+        "parts": [
+            { "path": "{{bootloader}}", "offset": 4096 },
+            { "path": "{{partition_table}}", "offset": 32768 },
+            { "path": "{{ota_data_initial}}", "offset": 57344 },
+            { "path": "{{app}}", "offset": 65536 },
+            { "path": "{{spiffs}}", "offset": 2686976 }
+        ]
+    }]
+}
