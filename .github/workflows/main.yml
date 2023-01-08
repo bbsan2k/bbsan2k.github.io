@@ -35,10 +35,10 @@ jobs:
           rm gbaHD-esp32.bin
           rm gbaHD-spiffs.bin
           rm gbaHD-partition-table.bin
-          wget https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-esp32-bootloader.bin
-          wget https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-esp32.bin
-          wget https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-spiffs.bin
-          wget https://github.com/ManCloud/GBAHD-Shield/releases/download/latest/gbaHD-partition-table.bin
+          wget https://github.com/gbaHD/GBAHD-Shield/releases/download/latest/gbaHD-esp32-bootloader.bin
+          wget https://github.com/gbaHD/GBAHD-Shield/releases/download/latest/gbaHD-esp32.bin
+          wget https://github.com/gbaHD/GBAHD-Shield/releases/download/latest/gbaHD-spiffs.bin
+          wget https://github.com/gbaHD/GBAHD-Shield/releases/download/latest/gbaHD-partition-table.bin
           wget -O .github/tmp/latest.json https://api.github.com/repos/ManCloud/GBAHD-Shield/releases/latest
       
       - name: Build HTML
