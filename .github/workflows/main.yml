@@ -55,25 +55,25 @@ jobs:
           # To be used with the "data_file" input, can be one of: env, ini, yaml or json
           data_format: json
           
-      #- name: Build release_manifest
-      #  # You may pin to the exact commit or the version.
-      #  # uses: cuchi/jinja2-action@1149b92d9ea6db61d7f71c22e3d5028d8065f140
-      #  uses: cuchi/jinja2-action@v1.2.0
-      #  with:
-      #    # 
-      #    template: .github/templates/manifest.j2
-      #    # 
-      #    output_file: release_manifest.json
-      #    # See "data_format" for supported formats
-      #    data_file: .github/tmp/latest.json
-      #    # To be used with the "data_file" input, can be one of: env, ini, yaml or json
-      #    data_format: json
-      #    variables: |
-      #      bootloader=gbaHD-esp32-bootloader.bin
-      #      partition_table=gbaHD-partition-table.bin
-      #      ota_data_initial=gbaHD-ota_data_initial.bin
-      #      app=gbaHD-esp32.bin
-      #      spiffs=gbaHD-spiffs.bin
+      - name: Build release_manifest
+        # You may pin to the exact commit or the version.
+        # uses: cuchi/jinja2-action@1149b92d9ea6db61d7f71c22e3d5028d8065f140
+        uses: cuchi/jinja2-action@v1.2.0
+        with:
+          # 
+          template: .github/templates/manifest.j2
+          # 
+          output_file: release_manifest.json
+          # See "data_format" for supported formats
+          data_file: .github/tmp/latest.json
+          # To be used with the "data_file" input, can be one of: env, ini, yaml or json
+          data_format: json
+          variables: |
+            bootloader=gbaHD-esp32-bootloader.bin
+            partition_table=gbaHD-partition-table.bin
+            ota_data_initial=gbaHD-ota_data_initial.bin
+            app=gbaHD-esp32.bin
+            spiffs=gbaHD-spiffs.bin
           
       - name: Cleanup
         run: |
