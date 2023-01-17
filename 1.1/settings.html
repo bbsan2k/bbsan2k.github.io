@@ -1,0 +1,80 @@
+<!doctype html>
+
+<head>
+    <title>gbaHD Update</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="pico.min.css">
+    <link rel="stylesheet" href="gbaHD.css">
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    <script type="text/javascript">
+        async function delay(delayInms) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve(2);
+                }, delayInms);
+            });
+        }
+        async function writeWifi() {
+            if ("serial" in navigator) {
+                // Prompt user to select any serial port.
+                port = await navigator.serial.requestPort({});
+
+                // Wait for the serial port to open.
+                await port.open({
+                    baudRate: 115200
+                });
+                const textEncoder = new TextEncoderStream();
+                const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
+
+                const writer = textEncoder.writable.getWriter();
+
+                var ssid = document.getElementById("wifi.ssid").value;
+                var password = document.getElementById("wifi.password").value;
+
+                await writer.write("wifi.ssid=" + ssid + "\n");
+                await delay(1000);
+                await writer.write("wifi.password=" + password + "\n");
+                await delay(1000);
+                await writer.write("reboot");
+
+
+                // Allow the serial port to be closed later.
+                writer.close();
+                await writableStreamClosed;
+
+                await port.close();
+
+                alert("Done, your gbaHD is rebooting now!");
+            } else {
+                alert("Your browser is not supported. Please use a Chromium based browser.");
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <main class="container">
+        <nav>
+            <ul>
+                <li><img src="Logo.svg" width="223"></li>
+            </ul>
+            <ul>
+                <li><a href="#" role="button">Settings</a></li>
+                <li><a href="index.html" role="button" class="outline">Update</a></li>
+            </ul>
+        </nav>
+        <h1>gbaHD WiFi Settings</h1>
+        <article id="main">
+            <p id="message"></p>
+            <form id="wifi.form">
+                <label for="wifi.ssid">SSID:</label><br>
+                <input type="text" id="wifi.ssid"><br>
+
+                <label for="wifi.password">Password:</label><br>
+                <input type="password" id="wifi.password">
+                <input type="button" value="Save and Restart" onclick="writeWifi();">
+            </form>
+        </article>
+    </main>
+</body>
